@@ -1,4 +1,5 @@
-module.exports = {
+// eslint-disable-next-line import/no-default-export -- asd
+export default {
 	verbose: true,
 	testEnvironment: 'node',
 	projects: [

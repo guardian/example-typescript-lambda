@@ -1,6 +1,7 @@
 {
   "name": "example-typecript-lambda",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "test": "npm run test --workspaces --if-present",
     "lint": "eslint packages/** --ext .ts --no-error-on-unmatched-pattern",
@@ -14,6 +15,7 @@
     "@guardian/eslint-config-typescript": "9.0.3",
     "@guardian/prettier": "8.0.0",
     "@guardian/tsconfig": "0.2.0",
+    "@jest/globals": "29.7.0",
     "@types/jest": "29.5.12",
     "@types/node": "20.11.24",
     "eslint": "8.57.0",
