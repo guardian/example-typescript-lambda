@@ -16,7 +16,6 @@ module.exports = {
 				'^.+\\.tsx?$': 'ts-jest',
 			},
 			testMatch: ['<rootDir>/packages/lambda/**/*.test.ts'],
-			setupFiles: ['dotenv/config'],
 		},
 	],
 };

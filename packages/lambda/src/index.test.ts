@@ -2,8 +2,9 @@ import { main } from './index';
 
 describe('The lambda', () => {
 	beforeAll(() => {
-		// Override the STAGE value from `.env`
+		process.env.STACK = 'playground';
 		process.env.STAGE = 'TEST';
+		process.env.APP = 'example-typescript-lambda';
 	});
 
 	it('should return a greeting', async () => {

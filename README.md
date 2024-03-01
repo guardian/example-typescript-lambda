@@ -11,7 +11,6 @@ This is an example of a TypeScript lambda, using:
 Logs appear in [Central ELK](https://logs.gutools.co.uk/goto/ea4e3010-5145-11ee-913c-1f0e93d001da).
 
 It's quite opinionated, using:
-- [dotenv](https://www.npmjs.com/package/dotenv) for local configuration
 - [esbuild](https://esbuild.github.io/) to compile TypeScript to run on AWS Lambda
 - [Jest](https://jestjs.io/) for testing
 
