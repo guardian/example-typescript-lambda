@@ -9,7 +9,7 @@
     "postbuild": "cd dist && zip -r example-typescript-lambda.zip ."
   },
   "devDependencies": {
-    "dotenv": "^16.3.1",
-    "esbuild": "^0.19.2"
+    "dotenv": "16.4.5",
+    "esbuild": "0.20.1"
   }
 }
