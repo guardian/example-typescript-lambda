@@ -22,16 +22,18 @@ jobs:
   CI:
     runs-on: ubuntu-latest
 
-    # See https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token
     permissions:
-      # required by aws-actions/configure-aws-credentials
-      id-token: write
       contents: read
+
+      # These permissions are required by guardian/actions-riff-raff...
+      id-token: write # ...to exchange an OIDC JWT ID token for AWS credentials
+      pull-requests: write #...to comment on PRs
+
     steps:
       - uses: actions/checkout@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
           cache: 'npm'
@@ -51,17 +53,12 @@ jobs:
       - name: Synth CDK
         run: npm -w cdk run synth
 
-      # Setup AWS credentials to enable uploading to S3 for Riff-Raff.
-      # See https://github.com/aws-actions/configure-aws-credentials
-      - uses: aws-actions/configure-aws-credentials@v3
-        with:
-          role-to-assume: ${{ secrets.GU_RIFF_RAFF_ROLE_ARN }}
-          aws-region: eu-west-1
-
       # See https://github.com/guardian/actions-riff-raff
       - name: Upload to riff-raff
-        uses: guardian/actions-riff-raff@v2
+        uses: guardian/actions-riff-raff@v4
         with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          roleArn: ${{ secrets.GU_RIFF_RAFF_ROLE_ARN }}
           projectName: playground::example-typescript-lambda
           configPath: packages/cdk/cdk.out/riff-raff.yaml
           contentDirectories: |
