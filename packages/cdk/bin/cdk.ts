@@ -1,5 +1,5 @@
 import 'source-map-support/register';
-import { GuRootExperimental } from '@guardian/cdk/lib/experimental/constructs';
+import { GuRoot } from '@guardian/cdk/lib/constructs/root';
 import { ExampleTypescriptLambda } from '../lib/example-typescript-lambda';
 
 /**
@@ -7,7 +7,7 @@ import { ExampleTypescriptLambda } from '../lib/example-typescript-lambda';
  *
  * @see https://github.com/guardian/cdk/blob/main/src/experimental/riff-raff-yaml-file/README.md
  */
-const app = new GuRootExperimental();
+const app = new GuRoot();
 
 new ExampleTypescriptLambda(app, 'ExampleTypescriptLambda-PROD', {
 	/**
