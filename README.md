@@ -21,7 +21,7 @@ For example, dependency versions, or Node version.
 ## Usage
 1. Clone this branch:
    ```sh
-   git clone -b example-typescript-lambda git@github.com:guardian/examples.git example-typescript-lambda
+   git clone git@github.com:guardian/example-typescript-lambda.git your-project-name
    ```
 2. Add your code to [packages/lambda/src](packages/lambda/src)
 3. Deploy via Riff-Raff
