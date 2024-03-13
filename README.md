@@ -19,12 +19,11 @@ Note, however, that there is a risk the repository might need updating.
 For example, dependency versions, or Node version.
 
 ## Usage
-1. Clone this branch:
-   ```sh
-   git clone git@github.com:guardian/example-typescript-lambda.git your-project-name
-   ```
+1. Fork (or clone[^1]) this repository
 2. Add your code to [packages/lambda/src](packages/lambda/src)
 3. Deploy via Riff-Raff
 
 You'll want to edit some parts of the infrastructure in [packages/cdk](packages/cdk) 
 to ensure the app is deployed to the desired AWS account.
+
+[^1]: If cloning, you'll also want to [update the remote url](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#changing-a-remote-repositorys-url) to match your repository
