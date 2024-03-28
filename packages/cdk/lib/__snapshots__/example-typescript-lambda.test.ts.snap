@@ -23,6 +23,9 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
         "ExampleTypescriptLambdaServiceRoleFE8EC8A1",
       ],
       "Properties": {
+        "Architectures": [
+          "arm64",
+        ],
         "Code": {
           "S3Bucket": {
             "Ref": "DistributionBucketName",

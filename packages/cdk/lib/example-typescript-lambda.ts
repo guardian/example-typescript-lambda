@@ -2,7 +2,7 @@ import type { GuStackProps } from '@guardian/cdk/lib/constructs/core';
 import { GuStack } from '@guardian/cdk/lib/constructs/core';
 import { GuLambdaFunction } from '@guardian/cdk/lib/constructs/lambda';
 import type { App } from 'aws-cdk-lib';
-import { Runtime } from 'aws-cdk-lib/aws-lambda';
+import { Architecture, Runtime } from 'aws-cdk-lib/aws-lambda';
 
 export class ExampleTypescriptLambda extends GuStack {
 	constructor(scope: App, id: string, props: GuStackProps) {
@@ -39,6 +39,15 @@ export class ExampleTypescriptLambda extends GuStack {
 			 * Should align with `.nvmrc` at the root of the repository.
 			 */
 			runtime: Runtime.NODEJS_20_X,
+
+			/**
+			 * The architecture of the lambda function.
+			 *
+			 * Arm64 is preferred as it's more performant, and cheaper than x86_64.
+			 *
+			 * @see https://aws.amazon.com/blogs/aws/aws-lambda-functions-powered-by-aws-graviton2-processor-run-your-functions-on-arm-and-get-up-to-34-better-price-performance/
+			 */
+			architecture: Architecture.ARM_64,
 		});
 	}
 }
