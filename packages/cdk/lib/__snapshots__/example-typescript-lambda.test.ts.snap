@@ -40,6 +40,9 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
           },
         },
         "Handler": "index.main",
+        "LoggingConfig": {
+          "LogFormat": "JSON",
+        },
         "MemorySize": 512,
         "Role": {
           "Fn::GetAtt": [
