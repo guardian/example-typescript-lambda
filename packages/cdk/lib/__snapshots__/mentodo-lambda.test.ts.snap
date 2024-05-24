@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
+exports[`The Mentodo stack matches the snapshot 1`] = `
 {
   "Metadata": {
     "gu:cdk:constructs": [
