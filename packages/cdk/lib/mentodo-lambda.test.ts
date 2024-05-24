@@ -1,11 +1,11 @@
 import { App } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
-import { ExampleTypescriptLambda } from './example-typescript-lambda';
+import { MentodoLambda } from './mentodo-lambda';
 
-describe('The ExampleTypescriptLambda stack', () => {
+describe('The Mentodo stack', () => {
 	it('matches the snapshot', () => {
 		const app = new App();
-		const stack = new ExampleTypescriptLambda(app, 'ExampleTypescriptLambda', {
+		const stack = new MentodoLambda(app, 'MentodoLambda', {
 			stack: 'playground',
 			stage: 'TEST',
 			env: {

@@ -4,7 +4,7 @@ import { GuLambdaFunction } from '@guardian/cdk/lib/constructs/lambda';
 import type { App } from 'aws-cdk-lib';
 import { Architecture, Runtime } from 'aws-cdk-lib/aws-lambda';
 
-export class ExampleTypescriptLambda extends GuStack {
+export class MentodoLambda extends GuStack {
 	constructor(scope: App, id: string, props: GuStackProps) {
 		super(scope, id, props);
 
@@ -15,16 +15,16 @@ export class ExampleTypescriptLambda extends GuStack {
 		 *
 		 * @see The `__snapshots__` directory for more.
 		 */
-		new GuLambdaFunction(this, 'ExampleTypescriptLambda', {
+		new GuLambdaFunction(this, 'MentodoLambda', {
 			/**
 			 * This becomes the value of the APP tag on provisioned resources.
 			 */
-			app: 'example-typescript-lambda',
+			app: 'mentodo-lambda',
 
 			/**
 			 * This is the name of artifact in S3.
 			 */
-			fileName: 'example-typescript-lambda.zip',
+			fileName: 'mentodo-lambda.zip',
 
 			/**
 			 * The format of this is `<filename>.<exported function>`.

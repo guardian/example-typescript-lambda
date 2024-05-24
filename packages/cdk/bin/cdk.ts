@@ -1,6 +1,6 @@
 import 'source-map-support/register';
 import { GuRoot } from '@guardian/cdk/lib/constructs/root';
-import { ExampleTypescriptLambda } from '../lib/example-typescript-lambda';
+import { MentodoLambda } from '../lib/mentodo-lambda';
 
 /**
  * GuRootExperimental will generate a `riff-raff.yaml` configuration file to deploy this project with Riff-Raff.
@@ -9,7 +9,7 @@ import { ExampleTypescriptLambda } from '../lib/example-typescript-lambda';
  */
 const app = new GuRoot();
 
-new ExampleTypescriptLambda(app, 'ExampleTypescriptLambda-PROD', {
+new MentodoLambda(app, 'MentodoLambda-CODE', {
 	/**
 	 * This becomes the value of the STACK tag on provisioned resources.
 	 *
@@ -22,7 +22,7 @@ new ExampleTypescriptLambda(app, 'ExampleTypescriptLambda-PROD', {
 	/**
 	 * This becomes the value of the STAGE tag on provisioned resources.
 	 */
-	stage: 'PROD',
+	stage: 'CODE',
 
 	env: {
 		/**

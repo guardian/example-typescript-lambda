@@ -17,10 +17,10 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
     },
   },
   "Resources": {
-    "ExampleTypescriptLambda948FA3B0": {
+    "MentodoLambda5DE055AC": {
       "DependsOn": [
-        "ExampleTypescriptLambdaServiceRoleDefaultPolicy8B3129CD",
-        "ExampleTypescriptLambdaServiceRoleFE8EC8A1",
+        "MentodoLambdaServiceRoleDefaultPolicy907901F0",
+        "MentodoLambdaServiceRole55A95968",
       ],
       "Properties": {
         "Architectures": [
@@ -30,11 +30,11 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
           "S3Bucket": {
             "Ref": "DistributionBucketName",
           },
-          "S3Key": "playground/TEST/example-typescript-lambda/example-typescript-lambda.zip",
+          "S3Key": "playground/TEST/mentodo-lambda/mentodo-lambda.zip",
         },
         "Environment": {
           "Variables": {
-            "APP": "example-typescript-lambda",
+            "APP": "mentodo-lambda",
             "STACK": "playground",
             "STAGE": "TEST",
           },
@@ -46,7 +46,7 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
         "MemorySize": 512,
         "Role": {
           "Fn::GetAtt": [
-            "ExampleTypescriptLambdaServiceRoleFE8EC8A1",
+            "MentodoLambdaServiceRole55A95968",
             "Arn",
           ],
         },
@@ -54,7 +54,7 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
         "Tags": [
           {
             "Key": "App",
-            "Value": "example-typescript-lambda",
+            "Value": "mentodo-lambda",
           },
           {
             "Key": "gu:cdk:version",
@@ -62,7 +62,7 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
           },
           {
             "Key": "gu:repo",
-            "Value": "guardian/example-typescript-lambda",
+            "Value": "guardian/mentodo-lambda",
           },
           {
             "Key": "Stack",
@@ -77,7 +77,60 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
       },
       "Type": "AWS::Lambda::Function",
     },
-    "ExampleTypescriptLambdaServiceRoleDefaultPolicy8B3129CD": {
+    "MentodoLambdaServiceRole55A95968": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+        "Tags": [
+          {
+            "Key": "App",
+            "Value": "mentodo-lambda",
+          },
+          {
+            "Key": "gu:cdk:version",
+            "Value": "TEST",
+          },
+          {
+            "Key": "gu:repo",
+            "Value": "guardian/mentodo-lambda",
+          },
+          {
+            "Key": "Stack",
+            "Value": "playground",
+          },
+          {
+            "Key": "Stage",
+            "Value": "TEST",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "MentodoLambdaServiceRoleDefaultPolicy907901F0": {
       "Properties": {
         "PolicyDocument": {
           "Statement": [
@@ -116,7 +169,7 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
                       {
                         "Ref": "DistributionBucketName",
                       },
-                      "/playground/TEST/example-typescript-lambda/example-typescript-lambda.zip",
+                      "/playground/TEST/mentodo-lambda/mentodo-lambda.zip",
                     ],
                   ],
                 },
@@ -133,7 +186,7 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
                     {
                       "Ref": "AWS::AccountId",
                     },
-                    ":parameter/TEST/playground/example-typescript-lambda",
+                    ":parameter/TEST/playground/mentodo-lambda",
                   ],
                 ],
               },
@@ -152,7 +205,7 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
                     {
                       "Ref": "AWS::AccountId",
                     },
-                    ":parameter/TEST/playground/example-typescript-lambda/*",
+                    ":parameter/TEST/playground/mentodo-lambda/*",
                   ],
                 ],
               },
@@ -160,67 +213,14 @@ exports[`The ExampleTypescriptLambda stack matches the snapshot 1`] = `
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "ExampleTypescriptLambdaServiceRoleDefaultPolicy8B3129CD",
+        "PolicyName": "MentodoLambdaServiceRoleDefaultPolicy907901F0",
         "Roles": [
           {
-            "Ref": "ExampleTypescriptLambdaServiceRoleFE8EC8A1",
+            "Ref": "MentodoLambdaServiceRole55A95968",
           },
         ],
       },
       "Type": "AWS::IAM::Policy",
-    },
-    "ExampleTypescriptLambdaServiceRoleFE8EC8A1": {
-      "Properties": {
-        "AssumeRolePolicyDocument": {
-          "Statement": [
-            {
-              "Action": "sts:AssumeRole",
-              "Effect": "Allow",
-              "Principal": {
-                "Service": "lambda.amazonaws.com",
-              },
-            },
-          ],
-          "Version": "2012-10-17",
-        },
-        "ManagedPolicyArns": [
-          {
-            "Fn::Join": [
-              "",
-              [
-                "arn:",
-                {
-                  "Ref": "AWS::Partition",
-                },
-                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
-              ],
-            ],
-          },
-        ],
-        "Tags": [
-          {
-            "Key": "App",
-            "Value": "example-typescript-lambda",
-          },
-          {
-            "Key": "gu:cdk:version",
-            "Value": "TEST",
-          },
-          {
-            "Key": "gu:repo",
-            "Value": "guardian/example-typescript-lambda",
-          },
-          {
-            "Key": "Stack",
-            "Value": "playground",
-          },
-          {
-            "Key": "Stage",
-            "Value": "TEST",
-          },
-        ],
-      },
-      "Type": "AWS::IAM::Role",
     },
   },
 }

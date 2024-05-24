@@ -59,10 +59,10 @@ jobs:
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           roleArn: ${{ secrets.GU_RIFF_RAFF_ROLE_ARN }}
-          projectName: playground::example-typescript-lambda
+          projectName: playground::mentodo-lambda
           configPath: packages/cdk/cdk.out/riff-raff.yaml
           contentDirectories: |
             cdk.out:
               - packages/cdk/cdk.out
-            example-typescript-lambda:
-              - packages/lambda/dist/example-typescript-lambda.zip
+            mentodo-lambda:
+              - packages/lambda/dist/mentodo-lambda.zip
