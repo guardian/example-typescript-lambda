@@ -26,4 +26,6 @@ For example, dependency versions, or Node version.
 You'll want to edit some parts of the infrastructure in [packages/cdk](packages/cdk) 
 to ensure the app is deployed to the desired AWS account.
 
+You'll also want to update or remove the [Dependabot auto-approve workflow](.github/workflows/dependabot-auto-approve.yml), which keeps this repository up to date with dependencies but may not be suitable for a production lambda!
+
 [^1]: If cloning, you'll also want to [update the remote url](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#changing-a-remote-repositorys-url) to match your repository
