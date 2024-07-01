@@ -10,6 +10,6 @@
     "postbuild": "cd dist && zip -r example-typescript-lambda.zip ."
   },
   "devDependencies": {
-    "esbuild": "0.21.5"
+    "esbuild": "0.22.0"
   }
 }
