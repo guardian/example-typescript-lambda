@@ -16,7 +16,7 @@
     "@guardian/prettier": "8.0.1",
     "@guardian/tsconfig": "1.0.0",
     "@jest/globals": "29.7.0",
-    "@types/jest": "29.5.12",
+    "@types/jest": "29.5.13",
     "@types/node": "22.5.4",
     "eslint": "8.57.1",
     "eslint-plugin-prettier": "5.2.1",
