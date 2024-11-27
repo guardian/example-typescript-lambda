@@ -38,7 +38,7 @@ export class ExampleTypescriptLambda extends GuStack {
 			 *
 			 * Should align with `.nvmrc` at the root of the repository.
 			 */
-			runtime: Runtime.NODEJS_20_X,
+			runtime: Runtime.NODEJS_22_X,
 
 			/**
 			 * The architecture of the lambda function.
