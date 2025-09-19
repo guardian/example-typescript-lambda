@@ -17,7 +17,7 @@
     "@guardian/tsconfig": "1.0.0",
     "@jest/globals": "30.1.2",
     "@types/jest": "30.0.0",
-    "@types/node": "24.1.0",
+    "@types/node": "24.5.2",
     "eslint": "9.30.1",
     "eslint-plugin-prettier": "5.5.4",
     "jest": "30.0.5",
