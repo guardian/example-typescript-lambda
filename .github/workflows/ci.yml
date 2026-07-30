@@ -41,17 +41,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Lint
-        run: npm run lint
+      - parallel:
+        - run: npm run lint
+        - run: npm test
 
-      - name: test
-        run: npm test
-
-      - name: Build
-        run: npm run build
-
-      - name: Synth CDK
-        run: npm -w cdk run synth
+      - parallel:
+        - run: npm run build
+        - run: npm -w cdk run synth
 
       # See https://github.com/guardian/actions-riff-raff
       - name: Upload to riff-raff
